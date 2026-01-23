@@ -5,12 +5,16 @@ body {
     font-family: var(--primary-font);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 h1,
 h2,
 h3,
 h4 {
     font-family: var(--heading-font);
-    color: var(--secondary-color-text);
 }
 
 
@@ -42,8 +46,8 @@ header a {
 
 .brand img {
     width: 100%;
-    max-width: 5rem;
-    margin-left: 10px;
+    max-width: 4rem;
+    margin-left: 1rem;
 }
 
 .site-title {
@@ -154,7 +158,7 @@ header a {
 
 /* main */
 main {
-    margin: auto;
+    /* margin: auto; */
 }
 
 
@@ -166,6 +170,7 @@ footer {
     padding: 10px;
     text-align: center;
     box-shadow: 0 -6px 18px rgba(16, 42, 67, 0.08);
+    margin-top: auto;
 }
 
 
@@ -181,7 +186,7 @@ footer {
 }
 
 .social-media {
-    justify-self: center;
+    justify-content: center;
     display: flex;
     gap: 30px;
     margin-top: 16px;
@@ -207,6 +212,8 @@ footer {
         box-shadow: none;
         display: flex;
         align-items: flex-end;
+        margin-bottom: 0;
+
     }
 
     .business-branding {

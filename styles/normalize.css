@@ -3,13 +3,13 @@
     --header-footer-color: linear-gradient(90deg, #0B3D91 0%, #037b4b 100%);
 
     --primary-color: #0B3D91;
-    --primary-color-text: #5a5a5a;
-    --secondary-color-text: #0B3D91;
+    --primary-color-text: #2e2d2d;
+    --secondary-color: #037b4b;
     --card-header-text: #00263e;
     --gradient-text: #FFFFFF;
 
     --highlight-color: #ffbb00;
-    --button-color: #02a765;
+    --button-color: #02a76590;
     --button-text-color: #FFFFFF;
 
     --card-background-color: rgba(26, 192, 187, 0.229);
@@ -37,6 +37,7 @@ h3,
     font-family: var(--heading-font);
 }
 
-.page-width {
-    /* background-color: var(); */
+#page-width {
+    max-width: 840px;
+    justify-self: center;
 }

@@ -1,0 +1,100 @@
+#page-width {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+
+    font-size: 3rem;
+    color: var(--primary-color-text);
+}
+
+.about-stockpulse-tagline {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+.about-stockpulse {
+    margin-top: 1rem;
+}
+
+.about-stockpulse,
+.about-stockpulse-tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary-color-text);
+
+}
+
+main {
+    margin: 1rem;
+}
+
+
+
+/* ----------- Page links ----------- */
+
+.search-page,
+.news-page {
+    background-color: var(--button-color);
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--primary-color-text);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 6px 18px rgba(2, 167, 101, 0.10), 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 180ms ease, transform 120ms ease;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+
+.search-page h2,
+.news-page h2 {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+
+
+@media (min-width: 640px) {
+
+    /* Make sure each container takes up equal space */
+    #page-width a {
+        flex: 1 1 0;
+        max-width: none;
+    }
+
+    .search-page,
+    .news-page {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .search-page:hover,
+    .news-page:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(2, 167, 101, 0.14), 0 8px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    #page-width {
+        flex-direction: row;
+    }
+
+
+}
