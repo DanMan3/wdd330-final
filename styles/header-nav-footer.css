@@ -1,0 +1,281 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: var(--primary-font);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--heading-font);
+    color: var(--secondary-color-text);
+}
+
+
+
+/* -------- Header -------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header-footer-color);
+    position: relative;
+    box-shadow: 0 6px 20px rgba(16, 42, 67, 0.15), 0 2px 6px rgba(16, 42, 67, 0.08);
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--gradient-text);
+    padding: 10px;
+}
+
+.navigation {
+    text-decoration: none;
+    color: var(--gradient-text);
+}
+
+.brand img {
+    width: 100%;
+    max-width: 5rem;
+    margin-left: 10px;
+}
+
+.site-title {
+    font-size: 1.3rem;
+    color: var(--gradient-text);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.business-branding {
+    display: flex;
+    margin-left: 1.3rem;
+}
+
+/* Nav */
+
+.navigation a[aria-current="page"],
+.navigation a.active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: bold;
+}
+
+.navigation li {
+    background: var(--header-footer-color);
+    color: var(--gradient-text);
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid black;
+    display: none;
+}
+
+
+.navigation.open li {
+    display: block;
+}
+
+.navigation.open {
+    padding: 0;
+    text-align: center;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: var(--gradient-text);
+    display: block;
+}
+
+
+.navigation.open li:active {
+    background: rgb(199, 255, 248);
+
+}
+
+
+/* Hamburger menu */
+
+.menu-button {
+    font-size: 1.5rem;
+    background: none;
+    border: 0;
+    color: var(--button-text-color);
+    margin-right: 8px;
+    margin-left: auto;
+    width: 40px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.menu-button::before {
+    content: "☰";
+    font-size: 1.5rem;
+    width: 30px;
+    height: 27px;
+    display: inline-flex;
+    text-align: center;
+    line-height: 27px;
+    margin-left: auto;
+}
+
+.menu-button.open::before {
+    content: "X";
+    font-size: 1.5rem;
+    width: 30px;
+    height: 27px;
+    display: inline-block;
+    text-align: center;
+    line-height: 27px;
+    background: var(--highlight-color);
+}
+
+.menu-button {
+    /* removes mobile tap highlight */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+
+/* main */
+main {
+    margin: auto;
+}
+
+
+/* Footer */
+
+footer {
+    background: var(--header-footer-color);
+    color: var(--gradient-text);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -6px 18px rgba(16, 42, 67, 0.08);
+}
+
+
+.footer-email {
+    font-style: italic;
+}
+
+.company-contact-info,
+.bennion-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.social-media {
+    justify-self: center;
+    display: flex;
+    gap: 30px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.social-media img {
+    width: 100%;
+    max-width: 3rem;
+}
+
+.last-modified-date {
+    font-style: italic;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+    /* -------- Header ---------- */
+
+    header {
+        box-shadow: none;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .business-branding {
+        margin-left: 5rem;
+    }
+
+    .brand {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .branding {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    /* Navigation */
+
+    .navigation {
+        display: flex;
+        justify-content: flex-end;
+        gap: 5px;
+        padding: 0;
+    }
+
+    #nav-large {
+        margin-right: 10rem;
+    }
+
+    .navigation li {
+        display: unset;
+        border: none;
+        background: inherit;
+    }
+
+
+    .navigation li:hover {
+        color: rgb(199, 255, 248);
+        ;
+        text-decoration: underline;
+    }
+
+    .navigation li:hover a {
+        color: rgb(199, 255, 248);
+        ;
+    }
+
+    /* Navigation button */
+    .menu-button {
+        display: none;
+    }
+
+
+    /* Footer */
+
+    footer {
+        gap: 5rem;
+        margin-top: auto;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-media {
+        margin: 0;
+    }
+
+    .bennion-info {
+        align-self: center;
+    }
+}
