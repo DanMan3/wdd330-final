@@ -33,7 +33,7 @@ header {
     box-sizing: border-box;
 }
 
-header a {
+.navigation a {
     text-decoration: none;
     color: var(--gradient-text);
     padding: 10px;
@@ -44,17 +44,21 @@ header a {
     color: var(--gradient-text);
 }
 
+.brand {
+    /* removes mobile tap highlight */
+    -webkit-tap-highlight-color: transparent;
+}
+
 .brand img {
     width: 100%;
     max-width: 4rem;
-    margin-left: 1rem;
+    margin-top: 10px;
 }
 
 .site-title {
     font-size: 1.3rem;
     color: var(--gradient-text);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-
 }
 
 .business-branding {
@@ -157,9 +161,6 @@ header a {
 
 
 /* main */
-main {
-    /* margin: auto; */
-}
 
 
 /* Footer */
@@ -188,14 +189,12 @@ footer {
 .social-media {
     justify-content: center;
     display: flex;
-    gap: 30px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    gap: .7em;
 }
 
 .social-media img {
     width: 100%;
-    max-width: 3rem;
+    max-width: 2.7rem;
 }
 
 .last-modified-date {
@@ -225,10 +224,6 @@ footer {
         padding-bottom: 0;
     }
 
-    .branding {
-        display: flex;
-        flex-direction: column;
-    }
 
 
     /* Navigation */
@@ -280,6 +275,10 @@ footer {
 
     .social-media {
         margin: 0;
+    }
+
+    .social-media img {
+        max-width: 2.5rem;
     }
 
     .bennion-info {

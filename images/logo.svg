@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 31 107 79" role="img" aria-label="Upward trending stock graph logo">
+  <defs>
+    <marker id="arrow" markerUnits="strokeWidth" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
+      <path d="M0 0 L5 2.5 L0 5 z" fill="#02a765"/>
+    </marker>
+  </defs>
+
+  <!-- zig-zag rising stock line (final point shortened slightly) -->
+  <path d="M8 108 L24 88 L38 96 L54 68 L70 76 L86 56 L102 36 L104 34"
+        fill="none"
+        stroke="#02a765"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        marker-end="url(#arrow)"/>
+
+  <!-- small data points -->
+  <circle cx="8"  cy="108" r="2.4" fill="#02a765"/>
+  <circle cx="24" cy="88"  r="2.4" fill="#02a765"/>
+  <circle cx="38" cy="96"  r="2.4" fill="#02a765"/>
+  <circle cx="54" cy="68"  r="2.4" fill="#02a765"/>
+  <circle cx="70" cy="76"  r="2.4" fill="#02a765"/>
+  <circle cx="86" cy="56"  r="2.4" fill="#02a765"/>
+  <circle cx="102" cy="36" r="2.4" fill="#02a765"/>
+  <circle cx="104" cy="34" r="2.4" fill="#02a765"/>
+</svg>
