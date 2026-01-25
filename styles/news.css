@@ -1,0 +1,15 @@
+#articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.article {
+    text-decoration: underline;
+    color: var(--primary-color-text);
+    text-align: left;
+}
+
+.article-container {
+    display: flex;
+}
