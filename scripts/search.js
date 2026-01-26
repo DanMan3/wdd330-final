@@ -1,7 +1,6 @@
 import navInit from "./navigation.mjs";
 import footerInit from "./dates.mjs";
-import retrieveStockData from "./search-stock.mjs";
-
+import { retrieveStockData, retrieveHistoricalStockData } from "./search-stock.mjs";
 
 
 
@@ -40,6 +39,12 @@ function renderStockData(stockInfo, ticker) {
 }
 
 
+function renderHistoricStockData(stockData) {
+
+    console.log(stockData);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     navInit();
@@ -50,6 +55,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         const stockInfo = await retrieveStockData(userInput);
         renderStockData(stockInfo, userInput);
+
+        const data = await retrieveHistoricalStockData(userInput);
+        renderHistoricStockData(data);
     } catch (err) {
         console.error(err);
     }
