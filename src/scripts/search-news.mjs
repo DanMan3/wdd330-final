@@ -1,23 +1,15 @@
+import newsData from "../data/news.json";
 
-
+// Retreive data from news json file
 export default async function retrieveNews(query = "finance") {
-
-    const baseURL = import.meta.env.VITE_NEWSAPI_API_URL;
-    const options = {
-        method: "GET",
-        headers: {
-            "Accept": "application/json",
-            "X-Api-Key": import.meta.env.VITE_NEWSAPI_API_KEY
-        }
-    }
-
-
-    const data = await fetch(`${baseURL}/everything?q=${encodeURIComponent(query)}&language=en&sortBy=publishedAt`, options)
-        .then(response => {
-            if (!response.ok) { throw new Error("Network response failed") }
-            return response.json();
-        });
-
-    return data;
-
+    if (!newsData || !newsData.articles) return { articles: [] };
+    if (!query || query === "finance") return newsData;
+    const q = query.toLowerCase();
+    return {
+        ...newsData,
+        articles: newsData.articles.filter(a =>
+            (a.title || "").toLowerCase().includes(q) ||
+            (a.description || "").toLowerCase().includes(q)
+        )
+    };
 }
