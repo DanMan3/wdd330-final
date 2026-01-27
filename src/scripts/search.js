@@ -1,6 +1,7 @@
 import navInit from "./navigation.mjs";
 import footerInit from "./dates.mjs";
 import { retrieveStockData, retrieveHistoricalStockData } from "./search-stock.mjs";
+import { retrieveCurrencyExchangeRate, calculateStockExchangePrice } from "./currency.mjs";
 
 
 
@@ -45,6 +46,13 @@ function renderHistoricStockData(stockData) {
 }
 
 
+function renderCurrencyExchangeRates(exchanges) {
+
+    console.log(exchanges);
+
+}
+
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     navInit();
@@ -58,6 +66,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const data = await retrieveHistoricalStockData(userInput);
         renderHistoricStockData(data);
+
+        const exchangeRates = await retrieveCurrencyExchangeRate();
+        const exchanges = await calculateStockExchangePrice(exchangeRates, stockInfo.c);
+        renderCurrencyExchangeRates(exchanges);
+
     } catch (err) {
         console.error(err);
     }
