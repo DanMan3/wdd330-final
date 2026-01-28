@@ -16,7 +16,7 @@
     <meta name="author" content="Daniel Bennion">
     <link rel="icon" href="../public/images/favicon.ico">
     <link rel="stylesheet" href="../styles/normalize.css">
-    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/search.css">
     <link rel="stylesheet" href="../styles/header-nav-footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,14 +60,42 @@
 
         <div id="page-width">
 
+            <div class="pinned-stocks hidden">
+                <h2 class="pinned-title">Pinned</h2>
+            </div>
+            <form id="search-form" aria-label="Search stocks" role="search">
+                <label for="search-input" class="visually-hidden"></label>
+                <input id="search-input" name="ticker" type="search" inputmode="search"
+                    placeholder="Enter ticker (e.g. AAPL)" autocomplete="off" required />
+                <button type="submit">Search</button>
+            </form>
+
             <div id="stock-info">
                 <h1 id="ticker"></h1>
-                <h2 id="current"></h2>
+                <div>
+                    <h2 id="current"></h2>
+                    <p id="change"></p>
+                </div>
                 <p id="timestamp"></p>
                 <p id="high"></p>
                 <p id="low"></p>
                 <p id="opening"></p>
                 <p id="prev-close"></p>
+            </div>
+
+            <div id="historical-info">
+                <table id="historical-info-table">
+                    <thead>
+                        <th id="historical-date">Date</th>
+                        <th id="historical-close">Cl.</th>
+                        <th id="historical-high">Hi.</th>
+                        <th id="historical-low">Lo.</th>
+                        <th id="historical-change">Chge</th>
+                        <th id="historical-change-percent">%</th>
+                        <th id="historical-volume">Vol.</th>
+                    </thead>
+                    <tbody id="historical-info-table-body"></tbody>
+                </table>
             </div>
 
         </div>

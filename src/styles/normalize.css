@@ -12,14 +12,14 @@
     --button-color: #02a76590;
     --button-text-color: #FFFFFF;
 
-    --card-background-color: rgba(26, 192, 187, 0.229);
+    --card-background-color: rgba(167, 234, 244, 0.85);
     --card-border-color: #d9b0ff;
 
     --primary-font: 'Roboto', Arial, sans-serif;
     --heading-font: 'Oswald', 'Segoe UI', sans-serif;
 
-    --positive: var(--positive, #037b4b);
-    --negative: var(--negative, #d60a22);
+    --positive: #037b4b;
+    --negative: #d60a22;
 }
 
 * {
