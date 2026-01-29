@@ -1,13 +1,30 @@
 import navInit from "./navigation.mjs";
 import footerInit from "./dates.mjs";
 import { retrieveStockData, retrieveHistoricalStockData } from "./search-stock.mjs";
-import { retrieveCurrencyExchangeRate, calculateStockExchangePrice } from "./currency.mjs";
+import { pinStock, renderPinnedStocks } from "./pin-stock.mjs";
 
 
 
 function renderStockData(stockInfo, ticker) {
     const stockTicker = document.getElementById("ticker");
     stockTicker.textContent = ticker;
+
+    const tickerWithPin = document.getElementById("ticker-with-pin");
+    // remove any existing pin buttons so we don't duplicate on each render
+    tickerWithPin.querySelectorAll("button").forEach(b => b.remove());
+    const pinButton = document.createElement("button");
+    pinButton.textContent = "📌";
+    pinButton.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        // Pin stock when the button is clicked
+        pinStock(ticker);
+        renderPinnedStocks();
+    });
+
+
+
+    tickerWithPin.appendChild(pinButton);
 
     const timestamp = document.getElementById("timestamp");
     const dt = new Date(stockInfo.t * 1000);
@@ -164,6 +181,7 @@ function addSearchFormHandling(form, onSubmit) {
 document.addEventListener("DOMContentLoaded", async () => {
     navInit();
     footerInit();
+    renderPinnedStocks();
 
     let userInput = "Search a stock ticker to get started";
 

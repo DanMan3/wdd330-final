@@ -60,9 +60,7 @@
 
         <div id="page-width">
 
-            <div class="pinned-stocks hidden">
-                <h2 class="pinned-title">Pinned</h2>
-            </div>
+
             <form id="search-form" aria-label="Search stocks" role="search">
                 <label for="search-input" class="visually-hidden"></label>
                 <input id="search-input" name="ticker" type="search" inputmode="search"
@@ -71,8 +69,10 @@
             </form>
 
             <div id="stock-info">
-                <h1 id="ticker"></h1>
-                <div>
+                <div id="ticker-with-pin">
+                    <h1 id="ticker"></h1>
+                </div>
+                <div class="stock-prices">
                     <h2 id="current"></h2>
                     <p id="change"></p>
                 </div>
@@ -81,6 +81,10 @@
                 <p id="low"></p>
                 <p id="opening"></p>
                 <p id="prev-close"></p>
+            </div>
+
+            <div class="pinned-stocks hidden">
+                <h2 class="pinned-title">Pinned</h2>
             </div>
 
             <div id="historical-info">
