@@ -1,0 +1,69 @@
+h1 {
+    text-align: center;
+}
+
+form {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), var(--card-background-color));
+    border: 1px solid rgba(20, 120, 160, 0.12);
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
+    max-width: 720px;
+    min-width: 320px;
+    margin: 0.75rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: stretch;
+
+
+    & div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & input {
+        min-height: 2rem;
+        border-radius: 5px;
+        border: 1px solid rgba(156, 156, 156, 0.533);
+    }
+
+    & input[type=submit] {
+        margin-top: 1rem;
+        min-height: 50px;
+        border-radius: 10px;
+        background-color: var(--secondary-color);
+        padding: 10px;
+        box-shadow: inset 0 6px 14px rgba(2, 6, 23, 0.36), inset 0 -4px 10px rgba(255, 255, 255, 0.06), 0 8px 20px rgba(2, 6, 23, 0.08);
+        border: none;
+        color: var(--gradient-text);
+        font-size: 1.3rem;
+        font-weight: bold;
+
+        &:hover {
+            border-color: var(--card-background-color);
+        }
+
+        &:active {
+            background-color: var(--card-background-color);
+        }
+    }
+
+
+
+
+
+    @media (width >=540px) {
+        min-width: 540px;
+
+
+        input[type="submit"] {
+            max-width: 200px;
+            align-self: flex-end;
+
+        }
+    }
+
+
+
+}
