@@ -214,6 +214,56 @@ form {
     }
 }
 
+@keyframes pin-pop {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.18) rotate(12deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+#ticker-with-pin button {
+    animation: pin-pop 320ms cubic-bezier(.22, .9, .35, 1);
+}
+
+
+@keyframes slide-fade {
+    from {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.pinned-stocks {
+    animation: slide-fade 360ms ease both;
+}
+
+.pinned-stock {
+    opacity: 0;
+    transform: translateX(8px);
+    animation: slide-fade 420ms cubic-bezier(.2, .9, .2, 1) forwards;
+    border-radius: 8px;
+    padding: 0.35rem 0.5rem;
+    background: rgba(0, 0, 0, 0.02);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.pinned-stock:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+}
+
 
 #historical-info {
     width: 100%;
