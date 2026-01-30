@@ -13,6 +13,7 @@ function renderStockData(stockInfo, ticker) {
     // remove any existing pin buttons so we don't duplicate on each render
     tickerWithPin.querySelectorAll("button").forEach(b => b.remove());
     const pinButton = document.createElement("button");
+    pinButton.type = "button";
     pinButton.textContent = "📌";
     pinButton.addEventListener("click", (e) => {
         e.preventDefault();
