@@ -1,3 +1,8 @@
+#page-width {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 h1 {
     text-align: center;
 }
@@ -55,6 +60,8 @@ form {
 
     @media (width >=540px) {
         min-width: 540px;
+        margin-top: 3rem;
+
 
 
         input[type="submit"] {
