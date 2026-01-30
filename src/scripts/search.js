@@ -18,7 +18,7 @@ function renderStockData(stockInfo, ticker) {
         e.preventDefault();
 
         // Pin stock when the button is clicked
-        pinStock(ticker);
+        pinStock(String(ticker).toUpperCase());
         renderPinnedStocks();
     });
 
@@ -129,7 +129,7 @@ function renderHistoricStockData(stockData) {
                               <td class="high">${i.h}</td>
                               <td class="low">${i.l}</td>
                               <td class="change">${change}</td>
-                              <td classchange-percent="">${changePct}</td>
+                              <td class="change-percent="">${changePct}</td>
                               <td class="volume">${formattedVol}</td>`;
         table.appendChild(tableRow);
 
